@@ -8,6 +8,10 @@ class Movie(models.Model):
     created_at = models.DateTimeField(auto_now_add=True) # When it was create
     updated_at = models.DateTimeField(auto_now=True) # When i was update
     creator = models.ForeignKey('auth.User', related_name='movies', on_delete=models.CASCADE)
+    
+
+
+
 
 
 

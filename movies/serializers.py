@@ -3,6 +3,8 @@ from .models import Movie
 from django.contrib.auth.models import User
 
 
+
+
 class MovieSerializer(serializers.ModelSerializer):  # create class to serializer model
     creator = serializers.ReadOnlyField(source='creator.username')
 
