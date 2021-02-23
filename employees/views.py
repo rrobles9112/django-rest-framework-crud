@@ -1,12 +1,12 @@
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.generics import RetrieveUpdateDestroyAPIView, ListCreateAPIView
-from .models import Employee
+from .models import Employees
 from .permissions import IsOwnerOrReadOnly, IsAuthenticated
 from .serializers import EmployeeSerializer
 from .pagination import CustomPagination
 
-class get_delete_update_movie(RetrieveUpdateDestroyAPIView):
+class EmployeeView(RetrieveUpdateDestroyAPIView):
     serializer_class = EmployeeSerializer
     permission_classes = (IsAuthenticated, IsOwnerOrReadOnly,)
 
@@ -62,7 +62,7 @@ class get_delete_update_movie(RetrieveUpdateDestroyAPIView):
             return Response(content, status=status.HTTP_401_UNAUTHORIZED)
    
 
-class get_post_movies(ListCreateAPIView):
+class get_post_employees(ListCreateAPIView):
     serializer_class = EmployeeSerializer
     permission_classes = (IsAuthenticated,)
     pagination_class = CustomPagination

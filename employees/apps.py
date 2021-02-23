@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class EmployeesConfig(AppConfig):
-    name = 'movies'
+    name = 'employees'

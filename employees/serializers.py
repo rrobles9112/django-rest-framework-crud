@@ -10,11 +10,4 @@ class EmployeeSerializer(serializers.ModelSerializer):  # create class to serial
         fields = ('employee_code', 'salary_per_hour', 'start_data', 'departament')
 
 
-
-class UserSerializer(serializers.ModelSerializer):  # create class to serializer usermodel
-    movies = serializers.PrimaryKeyRelatedField(many=True, queryset=Employees.objects.all())
-
-    class Meta:
-        model = User
-        fields = ('id', 'username', 'movies')
     

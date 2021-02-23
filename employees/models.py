@@ -38,12 +38,12 @@ class Person(metaclass=MetaCount):
         return f"{self.__lastname} {self.__name}"
 
 
-class Employee(Person, metaclass=MetaCount):
+class Employees(Person, metaclass=MetaCount):
     employee_code = models.CharField(max_length=100)
     salary_per_hour = models.CharField(max_length=100)
     start_data = models.IntegerField()
     departament = models.DateTimeField(auto_now_add=True)  # When it was create
-    updated_at = models.DateTimeField(auto_now=True)  # When i was update
+    changed_at = models.DateTimeField(auto_now=True)  # When i was update
 
     def __init__(self, employee_code, salary_per_hour, start_data, departament):
         Person.__base__.__init__(self)
@@ -52,3 +52,4 @@ class Employee(Person, metaclass=MetaCount):
         self.start_data = start_data
         self.departament = departament
         type(self).count += 1
+        type
