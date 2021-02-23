@@ -52,4 +52,4 @@ class Employees(Person, metaclass=MetaCount):
         self.start_data = start_data
         self.departament = departament
         type(self).count += 1
-        type
+        
